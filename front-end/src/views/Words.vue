@@ -6,6 +6,7 @@
         <tr>
           <th>English</th>
           <th>German</th>
+          <th>French</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -13,6 +14,7 @@
         <tr v-for="(word, i) in words" :key="i">
           <td>{{ word.english }}</td>
           <td>{{ word.german }}</td>
+          <td>{{ word.french }}</td>
           <td width="75" class="center aligned">
             <router-link :to="{ name: 'show', params: { id: word._id } }">Show</router-link>
           </td>
@@ -48,10 +50,10 @@ export default {
         title: 'Are you sure you want to delete this word?',
         text: 'This action cannot be undone.',
         icon: 'warning',
-        showCancelButton: true, // Hiển thị nút Cancel
+        showCancelButton: true, 
         confirmButtonText: 'Yes, delete it',
         cancelButtonText: 'No, keep it',
-        reverseButtons: true, // Đảo ngược vị trí nút
+        
       });
 
       // Nếu người dùng chọn "Yes"

@@ -19,13 +19,12 @@
         async createWord(word) {
             // Show confirmation before updating the word
             const result = await Swal.fire({
-                title: 'Are you sure you want to update this word?',
-                text: 'This action will update the word details.',
+                title: 'Are you sure you want to add this word?',
                 icon: 'warning',
                 showCancelButton: true,
-                confirmButtonText: 'Yes, update it!',
-                cancelButtonText: 'No, keep it',
-                reverseButtons: true,
+                confirmButtonText: 'Yes',
+                cancelButtonText: 'No',
+                
             });
             if (result.isConfirmed) {
                 // Call API to update the word with the new data

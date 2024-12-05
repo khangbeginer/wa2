@@ -31,12 +31,11 @@ export default {
             // Show confirmation before updating the word
             const result = await Swal.fire({
                 title: 'Are you sure you want to update this word?',
-                text: 'This action will update the word details.',
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonText: 'Yes, update it!',
                 cancelButtonText: 'No, keep it',
-                reverseButtons: true,
+                
             });
 
             // If user confirms the update

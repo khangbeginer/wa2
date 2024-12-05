@@ -4,12 +4,16 @@ const Schema = mongoose.Schema;
 const VocabSchema = new Schema(
     {
         english: {
-            type: String,  // Corrected typo here
-            required: [true, 'English word cannot be blank']  // Corrected 'required' here
+            type: String,
+            required: [true, 'English word cannot be blank']
         },
         german: {
-            type: String,  // Corrected typo here
-            required: [true, 'German word cannot be blank']  // Corrected 'required' here
+            type: String,
+            required: [true, 'German word cannot be blank']
+        },
+        french: {
+            type: String,
+            required: [true, 'French word cannot be blank']
         }
     },
     { collection: 'vocab' }

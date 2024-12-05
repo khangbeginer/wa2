@@ -5,6 +5,9 @@ import New from './views/New.vue';
 import Show from './views/Show.vue';
 import Edit from './views/Edit.vue';
 import Test from './views/Test.vue';
+import Login from './views/Login.vue'; 
+import Register from './views/Register.vue'; 
+import Profile from './views/Profile.vue'; 
 
 const routes = [
   {
@@ -35,6 +38,21 @@ const routes = [
     path: '/test',
     name: 'test',
     component: Test
+  },
+  {
+    path: '/login', // Route mới cho login
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/register', // Route mới cho register
+    name: 'register',
+    component: Register
+  },
+  {
+    path: '/profile',  // Thêm route cho profile page
+    name: 'profile',
+    component: Profile  
   }
 ];
 

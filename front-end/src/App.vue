@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="ui inverted segment navbar">
+    <div class="ui inverted segment navbar" v-if="!['/login', '/register'].includes($route.path)">
       <div class="ui center aligned container">
         <div class="ui large secondary inverted pointing menu compact">
           <router-link to="/words" exact class="item">
@@ -12,10 +12,14 @@
           <router-link to="/test" class="item">
             <i class="graduation cap icon"></i> Test
           </router-link>
+          <div class="item">
+            <router-link to="/profile" class="greeting-text">
+              Hi, {{ username }}
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
-
     <div class="ui text container">
       <div class="ui one column grid">
         <div class="column">
@@ -28,8 +32,19 @@
 
 <script>
 export default {
-  name: 'app'
-};
+  data() {
+    return {
+      username: ''
+    };
+  },
+  mounted() {
+    // Kiểm tra localStorage để lấy tên người dùng
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      this.username = storedUsername;
+    }
+  }
+}
 </script>
 
 <style>
@@ -56,4 +71,12 @@ button.ui.button {
   margin-top: 15px;
   display: block;
 }
+.greeting-text {
+  margin-left: auto;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 10px; 
+}
+
 </style>
